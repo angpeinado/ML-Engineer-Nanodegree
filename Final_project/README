@@ -2,3 +2,56 @@ Repository of the final projects:
 
 1.Final project 1: Dog Breed Classifier
 2.Pending Plant Pathology Identification with CNN
+
+Plant Pathology Identification 
+README file 
+This project is based on Kaggle competition “Plant Pathology 2020”, for identification of the category of foliar diseases in apple trees (https://www.kaggle.com/c/plant-pathology-2020-fgvc7/overview). This competition is a challenge consisting to distinguish between leaves which are healthy, those which are infected with apple rust, those that have apple scab, and those with more than one disease.
+1.	INPUT DATA
+https://www.kaggle.com/c/plant-pathology-2020-fgvc7/data
+Input data used for this project was extracted from Kaggle competition. Files available are images and csv with only 780 Mb size.  
+	train.csv (CSV file with information of training images and columns with information about target diseases)
+ 
+•	image_id: name of image files for train
+•	combination of multiple diseases: 1 label if True
+•	healthy: 1 label if True
+•	rust: 1 label if True
+•	scab: 1 label if True
+	Images 
+Folder containing the 1820 train and 1820 test images (2048 x 1365 pix), in jpg format.
+	Test.csv 
+•	image_id: name of image files for testing, without labels information because these are the object of prediction.
+ 
+	sample_submission.csv (Object submission file example)
+•	image_id: name of image files for testing
+•	combination of multiple diseases: probability of multiple diseases
+•	healthy: probability of healthy
+•	rust: probability of rust
+•	scab: probability of scab
+ 
+Note: it is asked to submit probabilities of disease 
+
+2.	LIBRARIES AND MODULES NECCESARY FOR THE PROJECT
+•	import pandas as pd
+•	import numpy as np
+•	import torch
+•	import torchvision
+•	import torch.nn as nn
+•	import torch.nn.functional as F
+•	from torchvision.models import densenet121,resnet18
+•	import torchvision.models as models
+•	import torchvision.transforms as transforms
+•	import torch.optim as optim
+•	from PIL import Image
+•	from PIL import ImageFile
+•	ImageFile.LOAD_TRUNCATED_IMAGES = True
+•	from torch.utils.data import DataLoader,Dataset
+•	from torch.utils.data.sampler import SubsetRandomSampler
+•	import cv2
+•	import seaborn as sns
+•	from sklearn.preprocessing import LabelEncoder
+•	import matplotlib.pyplot as plt
+•	import glob
+•	%matplotlib inline
+•	from tqdm import tqdm
+•	tqdm.pandas()
+
